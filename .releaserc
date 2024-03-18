@@ -1,0 +1,41 @@
+{
+  "branches": [
+    "main"
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular",
+        "releaseRules": "./release-rules.cjs"
+      }
+    ],
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/github",
+      {
+        "message": "release(version): Release ${nextRelease.version}"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "npm version ${nextRelease.version} --no-git-tag-version  --allow-same-version"
+        
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "package.json",
+          "package-lock.json",
+          "CHANGELOG.md",
+          "README.md"
+        ],
+        "message": "release(version): Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}

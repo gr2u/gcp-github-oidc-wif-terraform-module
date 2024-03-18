@@ -1,0 +1,25 @@
+{
+    "name": "gcp-github-oidc-wif-terraform-module",
+    "author": "Serhii Dovhan",
+    "version": "0.0.0",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gr2u/gcp-github-oidc-wif-terraform-module.git"
+    },
+    "scripts": {
+        "semantic-release": "semantic-release"
+    },
+    "keywords": [],
+    "license": "ISC",
+    "devDependencies": {
+        "@semantic-release/changelog": "^6.0.1",
+        "@semantic-release/commit-analyzer": "^9.0.2",
+        "@semantic-release/git": "^10.0.1",
+        "@semantic-release/github": "^8.0.5",
+        "@semantic-release/release-notes-generator": "^10.0.3",
+        "semantic-release": "^19.0.3",
+        "@semantic-release/exec": "^6.0.3"
+    },
+    "private": false
+}
