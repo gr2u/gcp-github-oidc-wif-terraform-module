@@ -32,6 +32,8 @@ module "gcp_workload_identity" {
   }
 }
 ```
+
+
 <!-- ## Inputs
 
 - `project_id` (required): The ID of the GCP project.
