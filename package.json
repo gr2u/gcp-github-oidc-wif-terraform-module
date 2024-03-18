@@ -1,7 +1,7 @@
 {
     "name": "gcp-github-oidc-wif-terraform-module",
     "author": "Serhii Dovhan",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "",
     "repository": {
         "type": "git",
