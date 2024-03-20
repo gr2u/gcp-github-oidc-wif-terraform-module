@@ -24,6 +24,13 @@ jobs:
       with:
         tfsec_args: --soft-fail
         github_token:  ${{ secrets.GITHUB_TOKEN }}
+   
+    - name: Upload artifact 2
+      uses: actions/upload-artifact@v2
+      with:
+        name: results.json
+        path: results.json
+
 
     - name: Test with Checkov
       id: checkov
