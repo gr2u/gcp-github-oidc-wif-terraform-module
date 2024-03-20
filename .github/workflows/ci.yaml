@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: read
+      security-events: write
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -31,7 +33,7 @@ jobs:
     - uses: actions/setup-node@v3.6.0
       with:
         node-version: 20
-        
+
     - name: tfsec
       uses: tfsec/tfsec-sarif-action@master
       with:
