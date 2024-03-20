@@ -19,6 +19,12 @@ jobs:
       with:
         python-version: 3.8
 
+    - name: tfsec
+      uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
+      with:
+        tfsec_args: --soft-fail
+        github_token:  ${{ secrets.GITHUB_TOKEN }}
+
     - name: Test with Checkov
       id: checkov
       uses: bridgecrewio/checkov-action@master
