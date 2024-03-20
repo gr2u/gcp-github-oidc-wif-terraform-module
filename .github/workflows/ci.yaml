@@ -45,11 +45,6 @@ jobs:
         # Path to SARIF file relative to the root of the repository
         sarif_file: tfsec.sarif
 
-    - name: Analyze SARIF results
-      uses: github/codeql-action/analyze-sarif@v3
-      with:
-        sarif_file: tfsec.sarif
-
     - name: Test with Checkov
       id: checkov
       uses: bridgecrewio/checkov-action@master
