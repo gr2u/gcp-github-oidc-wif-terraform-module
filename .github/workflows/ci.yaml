@@ -19,19 +19,27 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: tfsec
-      uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
-      with:
-        tfsec_args: --soft-fail
-        github_token:  ${{ secrets.GITHUB_TOKEN }}
+    # - name: install tfsec
+    #   run: curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+      
    
-    - name: Upload artifact 2
-      uses: actions/upload-artifact@v2
+    # - name: Upload artifact 2
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: results.json
+    #     path: results.json
+
+    - name: tfsec
+      uses: tfsec/tfsec-sarif-action@master
       with:
-        name: results.json
-        path: results.json
+        sarif_file: tfsec.sarif         
 
-
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        # Path to SARIF file relative to the root of the repository
+        sarif_file: tfsec.sarif
+        
     - name: Test with Checkov
       id: checkov
       uses: bridgecrewio/checkov-action@master
