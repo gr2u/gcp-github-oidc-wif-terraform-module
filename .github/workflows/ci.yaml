@@ -46,7 +46,7 @@ jobs:
         sarif_file: tfsec.sarif
 
     - name: Analyze SARIF results
-      uses: github/codeql-action/analyze-sarif@v1
+      uses: github/codeql-action/analyze-sarif@v3
       with:
         sarif_file: tfsec.sarif
 
