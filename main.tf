@@ -69,7 +69,7 @@ resource "google_iam_workload_identity_pool_provider" "github_actions" {
   workload_identity_pool_id          = each.key
   workload_identity_pool_provider_id = local.git_workload_identity_pool_provider_id
   display_name                       = local.git_workload_identity_pool_provider_id
-  attribute_condition                = var.attribute_condition
+  # attribute_condition                = var.attribute_condition
   attribute_mapping                  = var.attribute_mapping
 
   oidc {
